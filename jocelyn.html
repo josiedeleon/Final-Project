@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="/coco.html">Coco</a>
+                <a href="/dinnara.html">Dinnara</a>
+                <a href="/fannie.html">Fannie</a>
+                <a href="/jocelyn.html">Jocelyn</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="#">Red Wine</a>
+                <a href="#">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="middleSquare">
+    </div>
+
+
+    <div class="container">
+        <section class="row">
+            <div class="col-lg-7 col-md-12">
+                <div class="plot-content">
+                    <h1 class="plot-header">Name of the Machine learing model used here</h1>
+                    <hr>
+                    <img src="#" alt="Name of ML Model" id="other-image">
+
+                    <p>
+                        If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-12">
+                <div class="visplot-content">
+                    <h2 class="plot-header">Other ML Tests</h2>
+                    <hr>
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-6">
+                                <a href="./coco.html">
+                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="./dinnara.html">
+                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="./fannie.html">
+                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="./jocelyn.html">
+                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

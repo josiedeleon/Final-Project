@@ -1,0 +1,71 @@
+$redWine: #a4133c;
+$darkerWine: #800f2f;
+#NewNavBar {
+    background-color: $redWine;
+}
+
+body {
+    background-image: url("./blurred.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.DropButton {
+    width: 150px;
+    font-size: large;
+    height: 50px;
+    background-color: $redWine;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.DropButton:hover,
+.DropButton:focus {
+    background-color: $darkerWine;
+}
+
+.dropdownClass {
+    position: relative;
+    display: inline-block;
+}
+
+.dropDown-Content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropDown-Content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropDown-Content a:hover {
+    background-color: #ddd;
+}
+
+.showStuff {
+    display: block;
+}
+
+.middleSquare {
+    margin-top: 35px;
+    background-color: white;
+    opacity: 75%;
+    border-radius: 15px;
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
