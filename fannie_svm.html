@@ -17,8 +17,8 @@
             <div id="itemDropdown" class="dropDown-Content">
                 <a href="/coco.html">Coco</a>
                 <a href="/dinnara.html">Dinnara</a>
-                <a href="/fannie_dl.html">Fannie</a>
-                <a href="/fannie_svm.html">Fannie</a>
+                <a href="/fannie_dl.html">Fannie_Deep Learning</a>
+                <a href="/fannie_svm.html">Fannie_SVM</a>
                 <a href="/jocelyn.html">Jocelyn</a>
             </div>
         </div>
@@ -48,7 +48,7 @@
                         <h5> All Features</h5>
 
                         
-                        <img src="Resources/images/svm_white_cm_nor_all.jpg" alt="svm_white_cm_all" id="other-image">
+                       <img src="Resources/images/svm_white_cm_nor_all.jpg" alt="svm_white_cm_all" id="other-image">
 
 
                         <p> 
@@ -66,28 +66,32 @@
                         <li>fixed acidity - 0.071705</li>
 
                         </ul>
-                        <h6>Findings:</h6>
+                        <h6>Target Value:</h6>
                         <ul>
                         <li>Quality - Fair and Very Good</li>
                         
                         </ul>
                             <h6>Methods:</h6>
                             <ul>
-                                <li>Training size : 0.7</li>
+                            <li>Training size : 0.7</li>
                              <li>Support Vector Classifier</li>
+                             <li>GridSearch CV</li>
+
                              
                          </ul>
                             <h6>Summary:</h6>
                             <ul>    
-                             <li>In data exploration and modeling, we utilize all features to predict the quality of wine.  We perform deep learning sequential method to receive 83 % accuracy rate.</li>  
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 82 % accuracy rate.</li>  
 
-                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
 
                             <li> The classifier made a total of 357 predictions. </li>
-                            <li> Out of those 357 cases, the classifier predicted "very good" 28 times, and "Fair" 329 times. </li>
+                            <li> Out of those 357 cases, the classifier predicted "Very Good" 28 times, and "Fair" 329 times. </li>
                             <li> In reality, 79 cases in the sample are in category of very good quality, 278 cases are not. </li>
                          </ul>
                         </p>   
+                        <br>
+                        <br>
 
                         <h5> Top Five Features</h5> 
 
@@ -97,22 +101,24 @@
 
                             <h6>Summary:</h6>
                             <ul>    
-                             <li>n data exploration and modeling, we perform importanace features methods to selecte top five features predict the quality of wine.  We perform deep learning sequential method to receive 82 % accuracy rate.</li>  
+                             <li>In data exploration and modeling, we perform importance features methods to select the top five features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 82 % accuracy rate.  There is no significant change after removing the lower score of features.</li>  
 
-                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
 
                             <li> The classifier made a total of 357 predictions. </li>
-                            <li> Out of those 357 cases, the classifier predicted "very good" 69 times, and "Fair" 288 times. </li>
+                            <li> Out of those 357 cases, the classifier predicted "Very Good" 22 times, and "Fair" 335 times. </li>
                             <li> In reality, 69 cases in the sample are in category of very good quality, 288 cases are not. </li>
+                            </li>
                          </ul>
+                         <br>
+                         <br>
 
                         <hr>
-                        
+
 
                         <h3>Red Wine</h3>
 
                         
-
                         <h5> All Features</h5>
                         <img src="Resources/images/svm_red_cm_nor_all.jpg" alt="svm_red_cm_all" id="other-image">
 
@@ -132,7 +138,7 @@
                         <li>pH - 0.067486</li>
                         <li>chlorides - 0.066996</li>
                         </ul>
-                            <h6>Findings:</h6>
+                            <h6>Target Value:</h6>
                         <ul>
                         <li>Quality - Fair and Very Good</li>
                         
@@ -141,20 +147,23 @@
                             <ul>
                                 <li>Training size : 0.7</li>
                              <li>Support Vector Classifier</li>
+                             <li>GridSearch CV</li>
                                                           
                          </ul>
                             <h6>Summary:</h6>
                             <ul>    
-                             <li>In data exploration and modeling, we utilize all features to predict the quality of wine.  We perform deep learning sequential method to receive 93% accuracy rate.</li>  
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 92 % accuracy rate.</li>    
 
-                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
 
                             <li> The classifier made a total of 123 predictions. </li>
-                            <li> Out of those 123 cases, the classifier predicted "very good" 4 times, and "Fair" 119 times. </li>
-                            <li> In reality, 9 cases in the sample are in category of very good quality, 114 cases are not. </li>
+                            <li> Out of those 123 cases, the classifier predicted "Very Good" 6 times, and "Fair" 117 times. </li>
+                            <li> In reality, 20 cases in the sample are in category of very good quality, 103 cases are not. </li>
                          </ul>
 
-                        </p>   
+                        </p>  
+                        <br>
+                        <br> 
 
                         <h5> Top Five Features</h5> 
 
@@ -162,13 +171,13 @@
                         <p>
                             <h6>Summary:</h6>
                             <ul>    
-                             <li>In data exploration and modeling, we perform importanace features methods to selecte top five features predict the quality of wine.  We perform deep learning sequential method to receive 92 % accuracy rate.</li>  
+                             <li>In data exploration and modeling, we perform importance features methods to select the top five features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 89 % accuracy rate.  There is a slight increase after removing the lower score of features.</li> 
 
-                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
 
                             <li> The classifier made a total of 123 predictions. </li>
-                            <li> Out of those 123 cases, the classifier predicted "very good" 2 times, and "Fair" 121 times. </li>
-                            <li> In reality, 15 cases in the sample are in category of very good quality, 108 cases are not. </li>
+                            <li> Out of those 123 cases, the classifier predicted "Very Good" 5 times, and "Fair" 118 times. </li>
+                            <li> In reality, 13 cases in the sample are in category of very good quality, 110 cases are not. </li>
                          </ul>
                         </p>  
 
