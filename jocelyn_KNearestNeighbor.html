@@ -45,73 +45,66 @@
                     <h1 class="plot-header">K Nearest Neighbors</h1>
                     <hr>
                     <p>
-                        If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
+                        
+For the K Nearest Neighbor ML model we tested four environments, both Red Wine and White Wine : all wine features vs the top 5 features. Based on the features importance test, the top 5 features were alcohol, density, residual sugar, free sulfur dioxide, and pH.
+There are two possible predicted classes: "Fair" and "Very Good". When predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine.
+Based on the test accuracy scores for both Red and White wine, all features was a better test than just the top 5 features.
+
                     </p>
-                    <h2 class="plot-header">Red Wine </h1>
-                        <h3 class="plot-header">All Features </h3>;
+                    <h2 class="plot-header">Red Wine </h2>
+                        <h3 class="plot-header">All Features </h3>
+                        <p>
+                            The test accuracy score for Red Wine: all features was 0.885
+                        </p>
                     <img src="/Resources/images/all_KNN_graph_2.PNG" alt="KKN Red Wine- All Features" id="other-image">
+                    <p>
+                        The classifier made a total of 400 predictions, when considering all features.
+The classifier predicted “Fair (0)” 347 times and predicted “Very Good (1)” 2 times.
+                    </p>
                     
                     <img src="/Resources/images/red_all_features_confu_KNN.jpg" alt="KKN Red Wine- Top 5 Features" id="other-image">
-                    <p>
-                        If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
-                    </p>
+                   
                     <h3 class="plot-header">Top 5 Features </h3>
+                    <p>
+                        The test accuracy score for Red Wine: for top 5 features was 0.863
+                    </p>
                     <img src="/Resources/images/5_KNN_graph_2.PNG" alt="KNN White Wine- All Features" id="other-image">
+                    <p>
+                        The classifier made a total of 400 predictions, when considering the top 5 features.
+The classifier predicted “Fair (0)” 16 times and predicted “Very Good (1)” 53 times.
+                    </p>
+
                     <img src="/Resources/images/red_top5_features_confu_KNN.jpg" alt="KNN White Wine- Top 5 Features" id="other-image">
 
-                    <p>
-                        If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
-                    </p>
+
                     <h2 class="plot-header">White Wine </h1>
-                        <h3 class="plot-header">All Features </h3>;
+                        <h3 class="plot-header">All Features </h3>
+                        <p>
+                            The test accuracy score for White Wine: all features was 0.834
+                        </p>
                         <img src="/Resources/images/all_KNN_white_graph.PNG" alt="KKN Red Wine- All Features" id="other-image">
+                        <p>
+                            The classifier made a total of 1225 predictions, when considering all features.
+    The classifier predicted “Fair (0)” 941 times and predicted “Very Good (1)” 0 times.
+                        </p>
+                        
                         <img src="/Resources/images/white_all_features_confu_KNN.jpg" alt="KKN Red Wine- Top 5 Features" id="other-image">
-                        <p>
-                            If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
-                        </p>
+                        
                         <h3 class="plot-header">Top 5 Features </h3>
-                        <img src="/Resources/images/5_KNN_white_graph.PNG" alt="KNN White Wine- All Features" id="other-image">
-                        <img src="/Resources/images/white_top5_features_confu_KNN.jpg" alt="KNN White Wine- Top 5 Features" id="other-image">
                         <p>
-                            If you'd like to add brief description of your findings after running your machine learning test, input text here. If you dont want any text then delete.
+                            The test accuracy score for White Wine: for top 5 features was 0.811
                         </p>
+                        <img src="/Resources/images/5_KNN_white_graph.PNG" alt="KNN White Wine- All Features" id="other-image">
+                        <p>
+                            The classifier made a total of 1225 predictions, when considering the top 5 features.
+    The classifier predicted “Fair (0)” 889 times and predicted “Very Good (1)” 7 times.
+                        </p>
+                        <img src="/Resources/images/white_top5_features_confu_KNN.jpg" alt="KNN White Wine- Top 5 Features" id="other-image">
+                        
                     </div>
             </div>
 
-            <div class="col-lg-5 col-md-12">
-                <div class="visplot-content">
-                    <h2 class="plot-header">Other ML Tests</h2>
-                    <hr>
-                    <div class="container">
-
-                        <div class="row">
-
-                            <div class="col-6">
-                                <a href="./coco.html">
-                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
-                                </a>
-                            </div>
-
-                            <div class="col-6">
-                                <a href="./dinnara.html">
-                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
-                                </a>
-                            </div>
-
-                            <div class="col-6">
-                                <a href="./fannie.html">
-                                    <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
-                                </a>
-                            </div>
-
-                            <div class="col-6">
-                                <a href="./jocelyn_LogisticRegression.html">
-                                    <img src="Resources/images/5_LR_RED_matrix.PNG" alt="K Nearest Neighbor" id="vis-image" height="100px" width="120px">
-                
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        
 
                 </div>
             </div>
