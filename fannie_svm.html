@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="/coco.html">Coco</a>
+                <a href="/dinnara.html">Dinnara</a>
+                <a href="/fannie_dl.html">Fannie</a>
+                <a href="/fannie_svm.html">Fannie</a>
+                <a href="/jocelyn.html">Jocelyn</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="#">Red Wine</a>
+                <a href="#">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="middleSquare">
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header">Support Vector Machines (SVM) </h1>
+                        <hr>
+                       
+                                          
+
+                        <h3>White Wine</h3>
+                        <h5> All Features</h5>
+
+                        
+                        <img src="Resources/images/svm_white_cm_nor_all.jpg" alt="svm_white_cm_all" id="other-image">
+
+
+                        <p> 
+                            <h6>Features by Score Ranking:</h5>
+                        <ul>
+                        <li>alcohol - 0.181394</li>
+                        <li>density - 0.106549</li>
+                        <li>pH - 0.082567</li>
+                        <li>residual sugar - 0.082223</li>
+                        <li>free sulfur dioxide - 0.081671</li>
+                        <li>chlorides - 0.081378</li>
+                        <li>volatile acidity - 0.080156</li>
+                        <li>total sulfur dioxide - 0.078256</li>
+                        <li>citric acid - 0.074874</li>
+                        <li>fixed acidity - 0.071705</li>
+
+                        </ul>
+                        <h6>Findings:</h6>
+                        <ul>
+                        <li>Quality - Fair and Very Good</li>
+                        
+                        </ul>
+                            <h6>Methods:</h6>
+                            <ul>
+                                <li>Training size : 0.7</li>
+                             <li>Support Vector Classifier</li>
+                             
+                         </ul>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of wine.  We perform deep learning sequential method to receive 83 % accuracy rate.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 357 predictions. </li>
+                            <li> Out of those 357 cases, the classifier predicted "very good" 28 times, and "Fair" 329 times. </li>
+                            <li> In reality, 79 cases in the sample are in category of very good quality, 278 cases are not. </li>
+                         </ul>
+                        </p>   
+
+                        <h5> Top Five Features</h5> 
+
+                        <img src="Resources/images/svm_white_cm_nor_selected.jpg" alt="svm_white_cm_selected" id="other-image">
+                        <p>
+                            
+
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>n data exploration and modeling, we perform importanace features methods to selecte top five features predict the quality of wine.  We perform deep learning sequential method to receive 82 % accuracy rate.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 357 predictions. </li>
+                            <li> Out of those 357 cases, the classifier predicted "very good" 69 times, and "Fair" 288 times. </li>
+                            <li> In reality, 69 cases in the sample are in category of very good quality, 288 cases are not. </li>
+                         </ul>
+
+                        <hr>
+                        
+
+                        <h3>Red Wine</h3>
+
+                        
+
+                        <h5> All Features</h5>
+                        <img src="Resources/images/svm_red_cm_nor_all.jpg" alt="svm_red_cm_all" id="other-image">
+
+                        <p>
+
+                            <h5>Features by Score Ranking</h5>
+                        <ul>
+                        <li>alcohol - 0.171243</li>
+                        <li>sulphates - 0.112875</li>
+                        <li>volatile acidity - 0.09814</li>
+                        <li>citric acid - 0.096145</li>
+                        <li>density - 0.085803</li>
+                        <li>total sulfur dioxide  - 0.082951</li>
+                        <li>fixed acidity- 0.075679</li>
+                        <li>residual sugar - 0.073609</li>
+                        <li>free sulfur dioxide - 0.069072</li>
+                        <li>pH - 0.067486</li>
+                        <li>chlorides - 0.066996</li>
+                        </ul>
+                            <h6>Findings:</h6>
+                        <ul>
+                        <li>Quality - Fair and Very Good</li>
+                        
+                        </ul>
+                            <h6>Methods:</h6>
+                            <ul>
+                                <li>Training size : 0.7</li>
+                             <li>Support Vector Classifier</li>
+                                                          
+                         </ul>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of wine.  We perform deep learning sequential method to receive 93% accuracy rate.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 123 predictions. </li>
+                            <li> Out of those 123 cases, the classifier predicted "very good" 4 times, and "Fair" 119 times. </li>
+                            <li> In reality, 9 cases in the sample are in category of very good quality, 114 cases are not. </li>
+                         </ul>
+
+                        </p>   
+
+                        <h5> Top Five Features</h5> 
+
+                        <img src="Resources/images/svm_red_cm_nor_selected.jpg" alt="svm_red_cm_selected" id="other-image">
+                        <p>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we perform importanace features methods to selecte top five features predict the quality of wine.  We perform deep learning sequential method to receive 92 % accuracy rate.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 123 predictions. </li>
+                            <li> Out of those 123 cases, the classifier predicted "very good" 2 times, and "Fair" 121 times. </li>
+                            <li> In reality, 15 cases in the sample are in category of very good quality, 108 cases are not. </li>
+                         </ul>
+                        </p>  
+
+                        <hr>
+                       
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <div class="visplot-content">
+                        <h2 class="plot-header">Other ML Tests</h2>
+                        <hr>
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <a href="./coco.html">
+                                        <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a href="./dinnara.html">
+                                        <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a href="./fannie.html">
+                                        <img src="#" alt="SVM" id="vis-image" height="200px" width="200px">
+                                        <img src="#" alt="Deep Learning" id="vis-image" height="200px" width="200px">
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a href="./jocelyn.html">
+                                        <img src="#" alt="name of model" id="vis-image" height="200px" width="200px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
