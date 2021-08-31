@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+        <a href="/coco.html">Correlation</a>
+        <a href="/dinnara_rf.html">Random Forest</a>
+        <a href="/dinnara_xg.html">XGBoost</a>
+        <a href="/fannie_svm.html">SVM</a>
+        <a href="/fannie_dl.html">Deep Learning</a>
+        <a href="/jocelyn_lr.html">Logistic Regresion</a>
+        <a href="/jocelyn_knn.html">KNN</a>
+    </div>
+</div>
+
+<div class="dropdownClass">
+    <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+    <div id="itemDropdown1" class="dropDown-Content">
+        <a href="/redwine.html">Red Wine</a>
+        <a href="/whitewine.html">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header">Random Forests </h1>
+                        <hr>
+                       
+                        <p>Random Forest is a Supervised Machine Learning Algorithm that is used widely in Classification and Regression problems. </p>
+                        <p>For this problem we used the Classification method. </p>                        
+                        <p>Our problem predicts the quality of our wines. Our wines are classified as “Fair” or “Very Good” for the red and white wines.</p>                 
+                        <p>Our wines have these features: alcohol, density, pH, residual sugar, free sulfur dioxide, chlorides, volatile acidity, total sulfur dioxide, citric acid, and fixed acidity. </p>
+                        <p>We predicited our wines using 4 scenarios:
+                           <ul>
+                               <li>Red wine – all features</li>
+                               <li>Red wine – top 8 features</li>
+                               <li>White wine – all features</li>
+                               <li>Red wine – top 8 features</li>
+                           </ul> 
+                        </p>
+                        <h5>Tunning the model:</h5>
+                        <p>We used different combinations of parameters and the GridSearchCV library.  We choose the best accuracy rate avoiding overfitting and underfitting the model. 
+                        </p>
+                        <p>
+                        <ul><img src="Resources/images/Tunning.png" width="500" height="300">   </ul>
+                        </p>
+                        <hr>
+                        <h3>Red Wine (All Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 93 %.</p>
+                        <p>The classifier made 135 predictions (10% of data) and predict a total of 125 true positives and 10 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/RF_Red_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>Red Wine (Top 8 Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 94 %. A little higher result comparing with all features.</p>
+                        <p>The Random Forests classifies the features after the first prediction.</p>
+                        <p>We used the<a href="https://github.com/parrt/random-forest-importances)"> rfimp package </a>for this classification </p>
+                        <h6>Features by Score Ranking:</h6>
+                        <ul>
+                            <img src="Resources/images/RF_Red_Feature_Imp.png" width="500" height="300">   
+                        
+
+                        </ul>
+                        <p>The classifier made 135 predictions (10% of data) and predict a total of 127 true positives and 8 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/RF_Red_Less_Features_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>White Wine (All Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 85 %.</p>
+                        <p>The classifier made 396 predictions (10% of data) and predict a total of 338 true positives and 58 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/RF_White_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>White Wine (Top 8 Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 85 %. The same result as all features.</p>
+                        <p>The Random Forests classifies the features after the first prediction.</p>
+                        <p>We used the<a href="https://github.com/parrt/random-forest-importances)"> rfimp package </a>for this classification </p>
+                        <h6>Features by Score Ranking:</h6>
+                        <ul>
+                            <img src="Resources/images/RF_White_Feature_Imp.png" width="500" height="300">   
+                        
+
+                        </ul>
+
+                        
+                        <p>The classifier made 396 predictions (10% of data) and predict a total of 338 true positives and 58 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/RF_White_Less_Features_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
