@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="/coco.html">Correlation</a>
+                <a href="/dinnara_rf.html">Random Forest</a>
+                <a href="/dinnara_xg.html">XGBoost</a>
+                <a href="/fannie_svm.html">SVM</a>
+                <a href="/fannie_dl.html">Deep Learning</a>
+                <a href="/jocelyn_lr.html">Logistic Regresion</a>
+                <a href="/jocelyn_knn.html">KNN</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="/redwine.html">Red Wine</a>
+                <a href="/whitewine.html">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="middleSquare">
+    </div>
+
+
+    <div class="container">
+        <section class="row">
+            <div class="col-lg-7 col-md-12"> 
+                
+                <div class="plot-content">
+                    <h1 class="plot-header">Logistic Regression</h1>
+                    <p>
+                        
+For the Logistic Regression ML model we tested four environments, both Red Wine and White Wine: all wine features vs the top 5 features. Based on the features importance test, the top 5 features for Red Wine were alcohol, density, residual sugar, free sulfur dioxide, and pH. 
+The top 5 features for White Wine were alcohol, sulphates, volatile acidity, citric acid, and density.There are two possible predicted classes: "Fair (0)" and "Very Good (1)". When predicting the quality of wine, "very good" would mean to have better quality, and "fair" would mean to lower quality of wine.
+Based on the test accuracy scores for these models, all features vs the top 5 features was not statistically significant to conclude that one method one was better than the other.
+
+                    </p>
+                    <h2 class="plot-header">Red Wine </h1>
+                    <h3 class="plot-header">All Features </h3>
+                    <p>
+                        The test accuracy score for Red Wine considering all features was 0.87
+                    </p>
+                    <img src="/Resources/images/all_LR_RED_Report.PNG" alt="KKN Red Wine- Top 5 Features" id="other-image">
+                    <p>
+                        The classifier made a total of 320 predictions.
+                        The classifier predicted “Fair (0)” 264 times and predicted “Very Good (1)” 13 times.
+                    </p>
+                    <img src="/Resources/images/red_all_features_matrix_Logistic.jpg" alt="KKN Red Wine- All Features" id="other-image">
+                    
+                    <h3 class="plot-header">Top 5 Features </h3>
+                    <p>
+                        The test accuracy score for Red Wine considering the top 5 features was 0.86
+                    </p>
+                    <img src="/Resources/images/5_LR_RED_Report.PNG" alt="KNN White Wine- Top 5 Features" id="other-image">
+                    <p>
+                        The classifier made a total of 320 predictions.
+                        The classifier predicted “Fair (0)” 263 times and predicted “Very Good (1)” 12 times.
+                    </p>
+                    <img src="/Resources/images/5_LR_RED_matrix.PNG" alt="KNN White Wine- All Features" id="other-image">
+
+                
+                    <h2 class="plot-header">White Wine </h1>
+                        <h3 class="plot-header">All Features </h3>
+                        <p>
+                            The test accuracy score for White Wine considering all features was 0.79
+                        </p>
+                        <img src="/Resources/images/all_LR_White_Report.PNG" alt="KKN Red Wine- Top 5 Features" id="other-image">
+                        <p> 
+                            The classifier made a total of 980 predictions.
+                        The classifier predicted “Fair (0)” 707 times and predicted “Very Good (1)” 64 times.
+                        </p>
+                        <img src="/Resources/images/all_LR_White_matrix.PNG" alt="KKN Red Wine- All Features" id="other-image">
+                    
+                        <h3 class="plot-header">Top 5 Features </h3>
+                        <p>
+                            The test accuracy score for White Wine considering the top 5 features was 0.79
+                        </p>
+                        <img src="/Resources/images/5_LR_White_Report.PNG" alt="KNN White Wine- Top 5 Features" id="other-image">
+                        <p>
+                            The classifier made a total of 980 predictions.
+                        The classifier predicted “Fair (0)” 718 times and predicted “Very Good (1)” 59 times.
+                        </p>
+                        <img src="/Resources/images/5_LR_White_matrix.PNG" alt="KNN White Wine- All Features" id="other-image">
+                        
+                </div>
+            </div>
+
+
+                </div> 
+            </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

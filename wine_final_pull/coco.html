@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="/coco.html">Correlation</a>
+                <a href="/dinnara_rf.html">Random Forest</a>
+                <a href="/dinnara_xg.html">XGBoost</a>
+                <a href="/fannie_svm.html">SVM</a>
+                <a href="/fannie_dl.html">Deep Learning</a>
+                <a href="/jocelyn_lr.html">Logistic Regresion</a>
+                <a href="/jocelyn_knn.html">KNN</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="/redwine.html">Red Wine</a>
+                <a href="/whitewine.html">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header">Correlation</h1>
+                        <hr>
+                        <h3>White Wine</h3>
+                        <h5>Quality vs All Features Violin Plot</h5>
+                        <img src="Images/white_violinplot.png" alt="White Violinplot" id="other-image" style="width:1000px;height:800px;">
+                        <p>Violin plot helps quickly observe the distribution of wine data, with the mean, Q1, Q3, min, max. and the kernal density estimate (KDE),to compare between multiple factors.</p>
+                        <h5>Quality vs All Features Correlation Heatmap</h5>
+                        <img src="Images/white_heatmap.png" alt="White Violinplot" id="other-image" style="width:1000px;height:800px;">
+                        <p>
+                            <ul>
+                                <h6>Positive Correlation :</h6>
+                                <li>Alcohol: 0.44</li>
+                                <h6>Positive to No Correlation</h6>
+                                <li>pH: 0.10</li>
+                                <li>Sulphates: 0.05</li>
+                                <li>Free Sulfer Dioxide: 0.01</li>
+                                <h6>Negative Correlation :</h6>
+                                <li>Chlorides: -0.21</li>
+                                <h6>Negative to No Correlation</h6>
+                                <li>Volatile Acidity: -0.19</li>
+                                <li>Total Sulfer Dioxide: -0.17</li>
+                                <li>Fixed Acidity: -0.11</li>
+                                <li>Residual Sugar: -0.10</li>
+                                <li>Citric Acid: -0.01</li>
+                            </ul>
+                        </p>
+                        <h5>Summary</h5>
+                        <p>
+                            Quality has positive correlation with alcohol.  As the median of alcohol increases, the quality tend to increase. Negative correlation with density. All other factors has rare to no correlation with quality.
+                        </p>
+                        <hr>
+                        <h3>Red Wine</h3>
+                        <h5>Quality VS All Features Violin Plot</h5>
+                        <img src="Images/red_violinplot.png" alt="White Violinplot" id="other-image" style="width:1000px;height:800px;">
+                        <h5>Quality vs All Features Correlation Heatmap</h5>
+                        <img src="Images/red_heatmap.png" alt="White Violinplot" id="other-image" style="width:1000px;height:800px;">
+                        <p>
+                            <ul>
+                                <h6>Positive Correlation :</h6>
+                                <li>Alcohol: 0.48</li>
+                                <li>Sulphates: 0.25</li>
+                                <li>Citric Acid: 0.23</li>
+                                <h6>Positive to No Correlation</h6>
+                                <li>Fixed Acidity: 0.12</li>
+                                <li>Residual Sugar: 0.01</li>
+                                <h6>Negative Correlation :</h6>
+                                <li>Volatile Acidity: -0.39</li>
+                                <h6>Negative to No Correlation</h6>
+                                <li>Total Sulfer Dioxide: -0.19</li>
+                                <li>Density: -0.17</li>
+                                <li>Chlorides: -0.13</li><li>pH: -0.06</li>
+                                <li>Free Sulfer Dioxide: -0.05</li>
+                            </ul>
+                        </p>
+                        <h5>Summary</h5>
+                        <p>
+                            Quality has positive correlation with citric acid, sulphates, and alcohol. Negative correlation with volatile acidity. All other factors has rare to no correlation with quality.
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

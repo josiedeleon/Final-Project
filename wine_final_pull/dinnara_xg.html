@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="/coco.html">Correlation</a>
+                <a href="/dinnara_rf.html">Random Forest</a>
+                <a href="/dinnara_xg.html">XGBoost</a>
+                <a href="/fannie_svm.html">SVM</a>
+                <a href="/fannie_dl.html">Deep Learning</a>
+                <a href="/jocelyn_lr.html">Logistic Regresion</a>
+                <a href="/jocelyn_knn.html">KNN</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="/redwine.html">Red Wine</a>
+                <a href="/whitewine.html">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header">XGBoost</h1>
+                        <hr>
+                       
+                        <p>XGBoost stands for eXtreme Gradient Boosting. </p>
+                        <p>XGBoost is a decision-tree-based ensemble Machine Learning algorithm that uses a gradient boosting framework.</p>                        
+                        <p>It provides a parallel boosting trees algorithm that can solve Machine Learning tasks. </p>
+                        <p>We are going to use the XGBoost Classification method to predicts the quality of our wines. Our wines are classified as “Fair(0)” or “Very Good(1)” for the red and white wines. </p>                 
+                        <p>Our wines have these features: alcohol, density, pH, residual sugar, free sulfur dioxide, chlorides, volatile acidity, total sulfur dioxide, citric acid, and fixed acidity. </p>
+                        <p>We predicited our wines using 4 scenarios:
+                           <ul>
+                               <li>Red wine – all features</li>
+                               <li>Red wine – top 8 features</li>
+                               <li>White wine – all features</li>
+                               <li>Red wine – top 8 features</li>
+                           </ul> 
+                        </p>
+                        <h5>Tunning the model:</h5>
+                        <p>We used different combinations of parameters and the GridSearchCV library.  We choose the best accuracy rate avoiding overfitting and underfitting the model. 
+                        </p>
+                        <p>
+                        <ul><img src="Resources/images/Tunning2.png" width="500" height="300">   </ul>
+                        </p>
+                        <hr>
+                        <h3>Red Wine (All Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 93 %.</p>
+                        <p>The classifier made 135 predictions (10% of data) and predict a total of 126 true positives and 9 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_Red_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>Red Wine (Top 8 Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 94 %. A little higher result comparing with all features.</p>
+                        <p>The XGBoost classifies the features after the first prediction.</p>
+                        <p>We used Feature Importance computed with the Permutation method.
+                        </p>
+                        <p>This permutation method will randomly shuffle each feature and compute the change in the model’s performance. The features which impact the performance the most are the most important ones.
+                        </p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_Permutation_Problem.png" width="500" height="200">   
+                        
+
+                        </ul>
+                        <ul>
+                            <img src="Resources/images/XGBoost_Red_Feature_Importance.png" width="500" height="300">   
+                        
+
+                        </ul>
+                        <p>The classifier made 135 predictions (10% of data) and predict a total of 127 true positives and 8 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_Red_Less_Features_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>White Wine (All Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 81 %.</p>
+                        <p>The classifier made 395 predictions (10% of data) and predict a total of 320 true positives and 75 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_White_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <h3>White Wine (Top 8 Features):</h3>
+                        <h5> Findings:</h5>
+                        <p>We got a final result of 82 %.</p>
+                        
+                        <p>The XGBoost classifies the features after the first prediction.</p>
+                        <p>We used Feature Importance computed with the Permutation method.
+                        </p>
+                        <p>This permutation method will randomly shuffle each feature and compute the change in the model’s performance. The features which impact the performance the most are the most important ones.
+                        </p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_Permutation_Problem.png" width="500" height="200">   
+                        
+
+                        </ul>
+                        <ul>
+                            <img src="Resources/images/XGBoost_White_Feature_Importance.png" width="500" height="300">   
+                        
+
+                        </ul>
+
+                        
+                        <p>The classifier made 395 predictions (10% of data) and predict a total of 323 true positives and 72 false positives. </p>
+                        <p>
+                        <ul>
+                            <img src="Resources/images/XGBoost_White_Less_Features_Confusion_Matrix.png" width="500" height="300">
+                        </ul>
+                        </p>
+                        <hr>
+                        <p> References: </p>
+                        <p><a href="https://towardsdatascience.com/beginners-guide-to-xgboost-for-classification-problems-50f75aac5390">Beginner’s Guide to XGBoost for Classification Problems</a></p>
+                        <p><a href="https://mljar.com/blog/feature-importance-xgboost/">Xgboost Feature Importance Computed in 3 Ways with Python</a></p>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
