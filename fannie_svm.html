@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="coco.html">Correlation</a>
+                <a href="dinnara_rf.html">Random Forest</a>
+                <a href="dinnara_xg.html">XGBoost</a>
+                <a href="fannie_svm.html">SVM</a>
+                <a href="fannie_dl.html">Deep Learning</a>
+                <a href="jocelyn_lr.html">Logistic Regresion</a>
+                <a href="jocelyn_knn.html">KNN</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="redwine.html">Red Wine</a>
+                <a href="whitewine.html">White Wine</a> 
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header">Support Vector Machines (SVM) </h1>
+                        <hr>
+                       
+                                          
+
+                        <h3>White Wine</h3>
+                        <h5> All Features</h5>
+
+                        
+                       <img src="Resources/images/svm_white_cm_nor_all.jpg" alt="svm_white_cm_all" id="other-image">
+
+
+                        <p> 
+                            <h6>Features by Score Ranking:</h5>
+                        <ul>
+                        <li>alcohol - 0.181394</li>
+                        <li>density - 0.106549</li>
+                        <li>pH - 0.082567</li>
+                        <li>residual sugar - 0.082223</li>
+                        <li>free sulfur dioxide - 0.081671</li>
+                        <li>chlorides - 0.081378</li>
+                        <li>volatile acidity - 0.080156</li>
+                        <li>total sulfur dioxide - 0.078256</li>
+                        <li>citric acid - 0.074874</li>
+                        <li>fixed acidity - 0.071705</li>
+
+                        </ul>
+                        <h6>Target Value:</h6>
+                        <ul>
+                        <li>Quality - Fair and Very Good</li>
+                        
+                        </ul>
+                            <h6>Methods:</h6>
+                            <ul>
+                            <li>Training size : 0.7</li>
+                             <li>Support Vector Classifier</li>
+                             <li>GridSearch CV</li>
+
+                             
+                         </ul>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 82 % accuracy rate.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "very good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 357 predictions. </li>
+                            <li> Out of those 357 cases, the classifier predicted "Very Good" 28 times, and "Fair" 329 times. </li>
+                            <li> In reality, 79 cases in the sample are in category of very good quality, 278 cases are not. </li>
+                         </ul>
+                        </p>   
+                        <br>
+                        <br>
+
+                        <h5> Top Five Features</h5> 
+
+                        <img src="Resources/images/svm_white_cm_nor_selected.jpg" alt="svm_white_cm_selected" id="other-image">
+                        <p>
+                            
+
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we perform importance features methods to select the top five features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 82 % accuracy rate.  There is no significant change after removing the lower score of features.</li>  
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 357 predictions. </li>
+                            <li> Out of those 357 cases, the classifier predicted "Very Good" 22 times, and "Fair" 335 times. </li>
+                            <li> In reality, 69 cases in the sample are in category of very good quality, 288 cases are not. </li>
+                            </li>
+                         </ul>
+                         <br>
+                         <br>
+
+                        <hr>
+
+
+                        <h3>Red Wine</h3>
+
+                        
+                        <h5> All Features</h5>
+                        <img src="Resources/images/svm_red_cm_nor_all.jpg" alt="svm_red_cm_all" id="other-image">
+
+                        <p>
+
+                            <h5>Features by Score Ranking</h5>
+                        <ul>
+                        <li>alcohol - 0.171243</li>
+                        <li>sulphates - 0.112875</li>
+                        <li>volatile acidity - 0.09814</li>
+                        <li>citric acid - 0.096145</li>
+                        <li>density - 0.085803</li>
+                        <li>total sulfur dioxide  - 0.082951</li>
+                        <li>fixed acidity- 0.075679</li>
+                        <li>residual sugar - 0.073609</li>
+                        <li>free sulfur dioxide - 0.069072</li>
+                        <li>pH - 0.067486</li>
+                        <li>chlorides - 0.066996</li>
+                        </ul>
+                            <h6>Target Value:</h6>
+                        <ul>
+                        <li>Quality - Fair and Very Good</li>
+                        
+                        </ul>
+                            <h6>Methods:</h6>
+                            <ul>
+                                <li>Training size : 0.7</li>
+                             <li>Support Vector Classifier</li>
+                             <li>GridSearch CV</li>
+                                                          
+                         </ul>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we utilize all features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 92 % accuracy rate.</li>    
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 123 predictions. </li>
+                            <li> Out of those 123 cases, the classifier predicted "Very Good" 6 times, and "Fair" 117 times. </li>
+                            <li> In reality, 20 cases in the sample are in category of very good quality, 103 cases are not. </li>
+                         </ul>
+
+                        </p>  
+                        <br>
+                        <br> 
+
+                        <h5> Top Five Features</h5> 
+
+                        <img src="Resources/images/svm_red_cm_nor_selected.jpg" alt="svm_red_cm_selected" id="other-image">
+                        <p>
+                            <h6>Summary:</h6>
+                            <ul>    
+                             <li>In data exploration and modeling, we perform importance features methods to select the top five features to predict the quality of the wine.  We perform the Support Vector Classifier(SVC) method and use Grid Search CV tuning to achieve an 89 % accuracy rate.  There is a slight increase after removing the lower score of features.</li> 
+
+                             <li>There are two possible predicted classes: "Fair" and "Very Good".  If we were predicting the quality of wine, "Very Good" would mean to have better quality, and "Fair" would mean to lower quality of wine. </li>
+
+                            <li> The classifier made a total of 123 predictions. </li>
+                            <li> Out of those 123 cases, the classifier predicted "Very Good" 5 times, and "Fair" 118 times. </li>
+                            <li> In reality, 13 cases in the sample are in category of very good quality, 110 cases are not. </li>
+                         </ul>
+                        </p>  
+
+                        <hr>
+                       
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

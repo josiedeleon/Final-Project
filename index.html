@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Classifier</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="boddy">
+    <nav id="NewNavBar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-inline p-2 mr-auto text-white mb-0 pb-0" href="./index.html">Home</a>
+        <div class="dropdownClass">
+            <button id="dropdownButton" type="button" class="DropButton">ML Models   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown" class="dropDown-Content">
+                <a href="coco.html">Correlation</a>
+                <a href="dinnara_rf.html">Random Forest</a>
+                <a href="dinnara_xg.html">XGBoost</a>
+                <a href="fannie_svm.html">SVM</a>
+                <a href="fannie_dl.html">Deep Learning</a>
+                <a href="jocelyn_lr.html">Logistic Regresion</a>
+                <a href="jocelyn_knn.html">KNN</a>
+            </div>
+        </div>
+
+        <div class="dropdownClass">
+            <button id="dropdownButton1" type="button" class="DropButton">Data   <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+            <div id="itemDropdown1" class="dropDown-Content">
+                <a href="redwine.html">Red Wine</a>
+                <a href="whitewine.html">White Wine</a>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+            <section class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="plot-content">
+                        <h1 class="plot-header" style="font-size: 6rem;">Wine Analyzer</h1>
+                        <hr>
+                        <img src="Resources/images/redvswhite.jpg" width="350" height="350">
+
+                        <p style="font-size: large;">
+                            With the use of Machine Learning, can you tell if a wine is good without having to taste it? The purpose of 
+                            this project is to be able to analyze a variety of different data points to better predict the probability of 
+                            a wine being good. 
+                        </p>
+                        <h2 class="plot-header" style="font-size: 2rem;">Data Source</h2>
+                        <p style="font-size: medium;">
+                            Two datasets related to red and white Vinho Verde wine samples, from the north of Portugal.
+                            <h2 class="plot-header" style="font-size: 2rem;"></h1>
+                                
+                                    
+                                        <p style="font-size: medium;">
+                                            <img src="Resources/images/Portugal-illustrations-vinho-verde-wine-region.jpg" width="200" height="300"/>
+                            
+                            <h2 class="plot-header" style="font-size: 2rem;"></h1>
+                                <p style="font-size: medium;">
+                                    UCI Archive
+https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/
+
+                            winequality-white.csv
+                        </p>
+                        <p style="font-size: medium;"></p>
+                            winequality-red.csv
+                        </p>
+                            <h2 class="plot-header" style="font-size: 2rem;"></h1>
+                                <p style="font-size: medium;">
+                                    <img src="Resources/images/vinhoverde-top-xs.jpg" alt="Import Image Here" id="other-image">
+                                </p>        
+                            <h2 class="plot-header" style="font-size: 2rem;"></h1>
+                                <p style="font-size: medium;">
+                            P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
+Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.     
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dropdownButton").onmouseenter = function() {
+            document.getElementById("itemDropdown").classList.toggle("showStuff");
+        }
+
+        document.getElementById("dropdownButton1").onmouseenter = function() {
+            document.getElementById("itemDropdown1").classList.toggle("showStuff");
+        }
+
+        document.getElementById("NewNavBar").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("boddy").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+
+        document.getElementById("contentSquare").onmouseenter = function() {
+            var dropdowns = document.getElementsByClassName("dropDown-Content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('showStuff')) {
+                    openDropdown.classList.remove('showStuff');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>>
